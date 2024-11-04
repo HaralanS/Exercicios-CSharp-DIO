@@ -1,6 +1,7 @@
 ﻿
 using ExemploExplorando.Models;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
@@ -62,3 +63,107 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
 
 
+
+// try
+// {
+//     string[] linhas = File.ReadAllLines("Files/fileReading.txt");
+
+//     foreach (string linha in linhas) 
+//     {
+//         Console.WriteLine(linha);
+//     }
+
+// }
+// catch (FileNotFoundException ex)
+// {
+//     Console.WriteLine("Nao foi possivel encontrar o arquivo =,(");
+//     Console.WriteLine(ex.Message);
+// }
+// catch (DirectoryNotFoundException ex)
+// {
+//     Console.WriteLine("Nao foi possivel encontrar o diretorio do arquivo =,(");
+//     Console.WriteLine(ex.Message);
+// }
+// catch (Exception ex)
+// {
+    
+//     Console.WriteLine(ex.Message);
+// }
+// finally
+// {
+//     Console.WriteLine("Processo de leitura finalizado :D");
+// }
+
+// new ExemploExcecao().Metodo1();
+
+
+// Queue<int> fila = new Queue<int>();
+
+// fila.Enqueue(2);
+// fila.Enqueue(4);
+// fila.Enqueue(6);
+// fila.Enqueue(8);
+
+// foreach(int item in fila)
+// {
+//     Console.WriteLine(item);
+// }
+// Console.WriteLine("* * * * *  * * * * * ** ");
+
+// Console.WriteLine($"Removendo da fila o item: {fila.Dequeue()}");
+
+// Console.WriteLine("* * * * *  * * * * * ** ");
+
+// foreach(int item in fila)
+// {
+//     Console.WriteLine(item);
+// }
+
+// Stack<int> pilha = new Stack<int>();
+// pilha.Push(4);
+// pilha.Push(6);
+// pilha.Push(8);
+// pilha.Push(10);
+
+// foreach(int item in pilha)
+// {
+//     Console.WriteLine(item);
+// }
+// Console.WriteLine("* * * * *  * * * * * ** ");
+
+// Console.WriteLine($"Removendo da pilha o item: {pilha.Pop()}");
+
+// Console.WriteLine("* * * * *  * * * * * ** ");
+
+// foreach(int item in pilha)
+// {
+//     Console.WriteLine(item);
+// }
+
+Dictionary<string, string> estados = new Dictionary<string, string>();
+
+estados.Add("SC", "Santana Catarina");
+estados.Add("SP", "Sao Paulo");
+estados.Add("PR", "Parana");
+
+foreach(KeyValuePair<string, string> estado in estados)
+{
+    Console.WriteLine($"{estado.Key} - {estado.Value}");
+}
+
+Console.WriteLine("* * * * *  * * * * * * * ");
+
+if(estados.ContainsKey("PR"))
+{
+    estados.Remove("PR");
+}
+
+estados["SP"] = "Sao Paulo Adulterdado";
+// Boolean temEstadoSP = estados.ContainsKey("SP");
+
+Console.WriteLine("* * * * *  * * * * * * * ");
+
+foreach(KeyValuePair<string, string> estado in estados)
+{
+    Console.WriteLine($"{estado.Key} - {estado.Value}");
+}
