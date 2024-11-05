@@ -1,2 +1,5 @@
-Linha 1 do arquivo de leitura
-Linha 2 do arquivo de leitura com um conteudo a mais
+{
+  "Id": 1,
+  "Produto": "Material de Escritorio",
+  "Preco": 25.99
+}

@@ -2,6 +2,7 @@
 using ExemploExplorando.Models;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
@@ -62,7 +63,7 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 // DateTime data = DateTime.Parse(dataString);
 
 
-
+//         - - - - - - - - - - - -  - - Tratamento de erros / Try Catch - - - - - - - - - - - - - - - - - - -
 
 // try
 // {
@@ -95,6 +96,8 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 // }
 
 // new ExemploExcecao().Metodo1();
+
+//         - - - - - - - - - - - -  - - Filas / Pilhas / Dicionarios - - - - - - - - - - - - - - - - - - -
 
 
 // Queue<int> fila = new Queue<int>();
@@ -168,6 +171,8 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 //     Console.WriteLine($"{estado.Key} - {estado.Value}");
 // }
 
+//         - - - - - - - - - - - -  - - Tuplas - - - - - - - - - - - - - - - - - - -
+
 // (int id, string name, string surname) tupla = (1, "Haralan", "Santana");
 
 // ValueTuple<int, string, string, decimal> tupla2 = (2, "Joao", "Silva", 1.8M);
@@ -189,8 +194,38 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 // }
 // Console.WriteLine("Quantidade de linhas: " + arquivoLido.QuantidadeLinhas);
 
-Pessoa p1 = new Pessoa("Jao", "Silva", 15);
+// Pessoa p1 = new Pessoa("Jao", "Silva", 15);
 
-(string nome, string sobrenome) = p1;
+// (string nome, string sobrenome) = p1;
 
-Console.WriteLine("Nome: "+ nome + " - Sobrenome: " + sobrenome);
+// Console.WriteLine("Nome: "+ nome + " - Sobrenome: " + sobrenome);
+
+//         - - - - - - - - - - - -  - - JSON - - - - - - - - - - - - - - - - - - -
+
+// List<Venda> listaVendas = new List<Venda>();
+
+// DateTime dataAtual = DateTime.Now;
+
+// Venda v1 = new Venda(1, "Material de Escritorio", 25.99M, dataAtual);
+// Venda v2 = new Venda(1, "Licensa Software", 24.97M, dataAtual);
+
+// listaVendas.Add(v1);
+// listaVendas.Add(v2);
+
+// string serializado = JsonConvert.SerializeObject(listaVendas, Formatting.Indented);
+
+// File.WriteAllText("Files/vendas.json", serializado);
+
+// Console.WriteLine(serializado);
+
+string conteudoArquivo = File.ReadAllText("Files/vendas.txt");
+
+List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+foreach (Venda venda in listaVendas)
+{
+    Console.WriteLine("Id: " + venda.Id);
+    Console.WriteLine("Nome: " + venda.Produto);
+    Console.WriteLine("Preco: " + venda.Preco);
+    Console.WriteLine("Data: " + venda.DataVenda.ToString("dd/MM/yyyy"));
+}
