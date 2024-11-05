@@ -140,30 +140,57 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 //     Console.WriteLine(item);
 // }
 
-Dictionary<string, string> estados = new Dictionary<string, string>();
+// Dictionary<string, string> estados = new Dictionary<string, string>();
 
-estados.Add("SC", "Santana Catarina");
-estados.Add("SP", "Sao Paulo");
-estados.Add("PR", "Parana");
+// estados.Add("SC", "Santana Catarina");
+// estados.Add("SP", "Sao Paulo");
+// estados.Add("PR", "Parana");
 
-foreach(KeyValuePair<string, string> estado in estados)
-{
-    Console.WriteLine($"{estado.Key} - {estado.Value}");
-}
+// foreach(KeyValuePair<string, string> estado in estados)
+// {
+//     Console.WriteLine($"{estado.Key} - {estado.Value}");
+// }
 
-Console.WriteLine("* * * * *  * * * * * * * ");
+// Console.WriteLine("* * * * *  * * * * * * * ");
 
-if(estados.ContainsKey("PR"))
-{
-    estados.Remove("PR");
-}
+// if(estados.ContainsKey("PR"))
+// {
+//     estados.Remove("PR");
+// }
 
-estados["SP"] = "Sao Paulo Adulterdado";
-// Boolean temEstadoSP = estados.ContainsKey("SP");
+// estados["SP"] = "Sao Paulo Adulterdado";
+// // Boolean temEstadoSP = estados.ContainsKey("SP");
 
-Console.WriteLine("* * * * *  * * * * * * * ");
+// Console.WriteLine("* * * * *  * * * * * * * ");
 
-foreach(KeyValuePair<string, string> estado in estados)
-{
-    Console.WriteLine($"{estado.Key} - {estado.Value}");
-}
+// foreach(KeyValuePair<string, string> estado in estados)
+// {
+//     Console.WriteLine($"{estado.Key} - {estado.Value}");
+// }
+
+// (int id, string name, string surname) tupla = (1, "Haralan", "Santana");
+
+// ValueTuple<int, string, string, decimal> tupla2 = (2, "Joao", "Silva", 1.8M);
+
+// var tupla3 = Tuple.Create(3, "Pedro", "Souza", 1.95M);
+
+// Console.WriteLine("Id: " + tupla.id + " - Nome: " + tupla.name + " - Sobrenome: " + tupla.surname);
+
+// LeituraArquivo arquivo = new LeituraArquivo();
+
+// (bool Sucesso, string[] Linhas, int QuantidadeLinhas) arquivoLido = arquivo.LerArquivo("Files/fileReading.txt");
+// var (Sucesso, Linhas, QuantidadeLinhas) = arquivo.LerArquivo("Files/fileReading.txt"); // tipo desestruturacao
+// var (Sucesso, Linhas, _) = arquivo.LerArquivo("Files/fileReading.txt"); // descarta a variavel que tem um underline no lugar
+
+// Console.WriteLine("Sucesso: " + (arquivoLido.Sucesso ? "Sim" : "Nao"));
+// foreach(string Linha in arquivoLido.Linhas)
+// {
+//     Console.WriteLine(Linha);
+// }
+// Console.WriteLine("Quantidade de linhas: " + arquivoLido.QuantidadeLinhas);
+
+Pessoa p1 = new Pessoa("Jao", "Silva", 15);
+
+(string nome, string sobrenome) = p1;
+
+Console.WriteLine("Nome: "+ nome + " - Sobrenome: " + sobrenome);
