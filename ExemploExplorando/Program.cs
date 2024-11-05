@@ -218,14 +218,89 @@ CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en-US");
 
 // Console.WriteLine(serializado);
 
-string conteudoArquivo = File.ReadAllText("Files/vendas.txt");
+// string conteudoArquivo = File.ReadAllText("Files/vendas.txt");
 
-List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+// List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
 
-foreach (Venda venda in listaVendas)
-{
-    Console.WriteLine("Id: " + venda.Id);
-    Console.WriteLine("Nome: " + venda.Produto);
-    Console.WriteLine("Preco: " + venda.Preco);
-    Console.WriteLine("Data: " + venda.DataVenda.ToString("dd/MM/yyyy"));
-}
+// foreach (Venda venda in listaVendas)
+// {
+//     Console.WriteLine("Id: " + venda.Id);
+//     Console.WriteLine("Nome: " + venda.Produto);
+//     Console.WriteLine("Preco: " + venda.Preco);
+//     Console.WriteLine("Data: " + venda.DataVenda.ToString("dd/MM/yyyy"));
+// }
+
+//         - - - - - - - - - - - -  - - Tipos Especiais  - - - - - - - - - - - - - - - - - - -
+
+// bool? desejaReceberEmail = null;
+
+// if (desejaReceberEmail.HasValue && desejaReceberEmail.Value)
+// {
+//     Console.WriteLine("O usuario optou receber email");
+// }
+// else
+// {
+//     Console.WriteLine("O usuario nao respondeu optou nao receber email");
+// }
+
+
+// string conteudoArquivo = File.ReadAllText("Files/vendas.json");
+
+// List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+// foreach (Venda venda in listaVendas)
+// {
+//     Console.WriteLine("Id: " + venda.Id);
+//     Console.WriteLine("Nome: " + venda.Produto);
+//     Console.WriteLine("Preco: " + venda.Preco);
+//     Console.WriteLine("Data: " + venda.DataVenda.ToString("dd/MM/yyyy"));
+//     Console.WriteLine("Desconto: " + (venda.Desconto.HasValue ? venda.Desconto : 0M));
+// }
+
+
+// var tipoAnonimo = new {Nome = "Haralan", Sobrenome = "Santana", Altura = 1.76}; // Tipo anonimo
+
+// Console.WriteLine("Nome: " + tipoAnonimo.Nome);
+// Console.WriteLine("Sobrenome: " + tipoAnonimo.Sobrenome);
+// Console.WriteLine("Altura: " + tipoAnonimo.Altura);
+
+// -- - - - --  -- - - Lista de anonimos
+// string conteudoArquivo = File.ReadAllText("Files/vendas.json");
+
+// List<Venda> listaVendas = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivo);
+
+// var listaAnonimo = listaVendas.Select(x => new {x.Produto, x.Preco});
+
+// foreach (var venda in listaAnonimo)
+// {
+//     Console.WriteLine("- - - - - - - - - -");
+//     Console.WriteLine("Nome: " + venda.Produto);
+//     Console.WriteLine("Preco: " + venda.Preco);
+//     Console.WriteLine("     -       ");
+// }
+
+// -- dinamica
+
+// dynamic variavelDinamica = 4;
+// Console.WriteLine("Tipo da variavel: " + variavelDinamica.GetType() + " - Valor: " + variavelDinamica);
+
+// variavelDinamica = "Haralan";
+// Console.WriteLine("Tipo da variavel: " + variavelDinamica.GetType() + " - Valor: " + variavelDinamica);
+
+// -- CLasses Genericas
+
+// MeuArray<int> arrayInteiro = new MeuArray<int>();
+
+// arrayInteiro.AdicionarElemento(30);
+// Console.WriteLine("Item 0: " + arrayInteiro[0]);
+
+// -- Metodos de extensao
+
+int numero = 20;
+bool par = false;
+
+par = numero.EhPar();
+
+string mensagem = "O numero " + numero + " eh " + (par ? "par" : "impar");
+
+Console.WriteLine(mensagem);

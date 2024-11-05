@@ -14,6 +14,7 @@ namespace ExemploExplorando.Models
         public string Produto { get; set; }
         public decimal Preco { get; set; }
         public DateTime DataVenda { get; set; }
+        public decimal? Desconto { get; set; }
 
         public Venda(int id, string produto, decimal preco, DateTime dataVenda)
         {
