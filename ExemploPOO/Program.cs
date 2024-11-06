@@ -1,4 +1,5 @@
-﻿using ExemploPOO.Models;
+﻿using ExemploPOO.Interfaces;
+using ExemploPOO.Models;
 
 // Pessoa p1 = new Pessoa();
 // p1.Nome = "Haralan";
@@ -15,16 +16,27 @@
 // c1.ExibirSaldo();
 
 
-Professor p1 = new Professor();
-p1.Nome = "Joao";
-p1.Idade = 45;
-p1.Salario = 1999.99M;
+// Professor p1 = new Professor();
+// p1.Nome = "Joao";
+// p1.Idade = 45;
+// p1.Salario = 1999.99M;
 
-Aluno a1 = new Aluno();
-a1.Nome = "Pedrinho";
-a1.Idade = 20;
-a1.Email = "pedrinho@email.com";
-a1.Nota = 10;
+// Aluno a1 = new Aluno();
+// a1.Nome = "Pedrinho";
+// a1.Idade = 20;
+// a1.Email = "pedrinho@email.com";
+// a1.Nota = 10;
 
-p1.Apresentar();
-a1.Apresentar();
+// p1.Apresentar();
+// a1.Apresentar();
+
+// Corrente c = new Corrente();
+
+// c.Creditar(500);
+// c.ExibirSaldo();
+
+// Computador c = new Computador();
+
+ICalculadora calc = new Calculadora();
+
+Console.WriteLine(calc.Multiplicar(5,3));
